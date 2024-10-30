@@ -1,0 +1,139 @@
+
+ /* FOOTER START FROM HERE */
+.foot-main{
+    height: 7rem;
+    background-color: rgb(185, 180, 180);
+    padding-top: 1rem;
+}
+
+.foot-social{
+    text-align: center;
+}
+.foot-company{
+    text-align: center;
+}
+.foot-contact{
+    text-align: center;
+}
+.foot-social i{
+    margin-right: 1rem;
+}
+
+
+/* NAVBAR START FROM HERE */
+.navbar-edit{
+    height: 5rem !important;
+    background-color: rgb(91, 202, 156) !important;
+    position:fixed !important;
+    top: 0 !important;
+     z-index: 1000;
+}
+
+.nav-options a{
+    color: rgb(12, 26, 219) !important;
+    font-size: larger;
+    opacity: .8 !important;
+    font-weight: bolder !important;
+
+}
+.nav-options a:hover{
+    opacity: 1 !important;
+}
+
+.nav-options .nav-logout{
+    color: red !important;
+}
+.nav-tree {
+    color: rgb(6, 121, 6) ;
+}
+
+
+/* INDEX PAGE */
+.index-main{
+    margin-left: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-image{
+    height: 20rem;
+}
+.card-main{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-submit{
+    text-align: center;
+}
+
+.card-title{
+    font-size: larger;
+    font-weight: 900;
+}
+
+/* Welcome Heading */
+.welcome-heading{
+    text-align: center;
+    color: rgb(6, 121, 6);
+}
+
+
+/* SHOW PAGE */
+.card-show{
+    display: flex;
+    justify-content: center;
+}
+.show-img{
+    height: 17rem;
+}
+.show-heading{
+    text-align: center;
+    color: rgb(240, 69, 63);
+}
+.show-btns-edt{
+    background-color: blue !important;
+    color: white !important;
+    opacity: .8;
+}
+.show-btns-edt:hover{
+    opacity: 1;
+}
+
+.show-btns-del{
+    background-color: red !important;
+    color: white !important;
+    opacity: .8;
+}
+.show-btns-del:hover{
+    opacity: 1;
+}
+.show-main-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.show-main-btn form{
+    padding-right: 4rem;
+}
+
+/* new page */
+.new-btn{
+    text-align: center;
+}
+.new-heading{
+    text-align: center;
+}
+
+/* edit page */
+.edit-btn{
+    text-align: center;
+}
+.edit-heading{
+    text-align: center;
+}
+
+/* Map */
+#map{
+    height: 400px;
+    width: 60vh;
+}

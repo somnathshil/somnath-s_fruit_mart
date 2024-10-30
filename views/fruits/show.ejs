@@ -1,0 +1,117 @@
+<% layout("/layouts/boilerplate") %>
+<script> 
+    const latitude = <%- JSON.stringify( fruit.locLatitude) %>;
+    const longitude = <%- JSON.stringify( fruit.locLongitude) %>;
+</script>
+
+    <h2 class="show-heading">Details of <%=fruit.title%></h2>
+    <div class="card-show">
+    <div class="card " style="width: 38rem;">
+        <img src="<%=fruit.image.url%>" class="card-img-top show-img" alt="fruit_img">
+        <div class="card-body ">
+            <p class="card-text card-title"><%= fruit.title %></p>
+            <p class="card-text">Owned By <%= fruit.owner.username %></p>
+            <p class="card-text"><b><%= fruit.description %></b></p>
+            <p class="card-text"><b>&#8377;<%= fruit.price.toLocaleString("en-IN") %></b></p>
+            <p class="card-text"><b><%= fruit.country %></b></p>
+          </div>
+        </div>
+    </div>
+    <br/><br/>
+   
+    <% if(currUser && currUser._id.equals(fruit.owner._id)) { %>
+<div class="show-main-btn">
+    <form action="/fruits/<%= fruit._id %>/edit" method="get">
+    
+            <button class="btn show-btns-edt">Edit</button>
+        
+    </form>
+    <br/><br/>
+    <form action="/fruits/<%= fruit._id %>/delete">
+        
+            <button class="btn show-btns-del">Delete</button>
+    
+    </form>
+</div>
+<% } %>
+
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <% if(currUser) { %>
+<h4>Leave a Review</h4>
+<form action="/fruits/<%=fruit._id%>/reviews" method="post" class="needs-validation" novalidate>
+    
+    <div class="mb-3 mt-3">
+        <label for="rating" class="form-label">Rating</label>
+    <fieldset class="starability-slot">
+        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+        <label for="first-rate1" title="Terrible">1 star</label>
+        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+        <label for="first-rate2" title="Not good">2 stars</label>
+        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+        <label for="first-rate3" title="Average">3 stars</label>
+        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+        <label for="first-rate4" title="Very good">4 stars</label>
+        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+        <label for="first-rate5" title="Amazing">5 stars</label>
+      </fieldset>
+    </div>
+    <div>
+        <label for="comment" class="form-label">Comment</label>
+        <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
+        <div class="invalid-feedback">Please give some comments</div>
+    </div>
+    <div style="text-align: center;">
+        <br/>
+    <button class="btn btn-outline-dark">Submit</button>
+</div>
+</form>
+<% } %>
+
+
+ <% if(fruit.reviews.length > 0) { %>
+    <hr/>
+<h4>All Reviews</h4>
+<div class="row">
+    <% for(let review of fruit.reviews) { %>
+           <div class="card col-5 ms-3 mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@<%= review.author.username %></h5>
+                <p class="starability-result card-text" data-rating="<%= review.rating %>">
+                </p>
+                <p class="card-text"> <%= review.comment %> </p>
+                
+        </div>
+        <form action="/fruits/<%= fruit._id %>/reviews/<%= review._id %>?_method=DELETE" method="post" class="mb-3">
+            <button class="btn btn-sm btn-dark">Delete</button>
+        </form>
+    </div>
+        <% } %>
+    </div>
+<% } %>
+</div>
+<div class="col-8 offset-3 mb-3">
+<h3>Where you'll be</h3>
+<!-- <div id="map"></div> -->
+<div id="map" style="height: 400px; width: 650px;"></div>
+</div>
+</div>
+
+<!-- <script>
+    let mapToken = "<%= process.env.MAP_TOKEN %>";
+    console.log(mapToken);
+    mapboxgl.accessToken = mapToken;
+    const map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v12",
+        center: [-74.5, 40],
+        zoom: 9,
+    }); 
+</script> -->
+
+ 
+    
+    
+  
