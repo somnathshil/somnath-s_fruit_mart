@@ -1,31 +1,101 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-    <div class="container-fluid navbar-edit">
-      <a class="navbar-brand" href="/fruits"><i class="fa-solid fa-seedling fa-2x nav-tree"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav nav-options">
-          <a class="nav-link " aria-current="page" href="/fruits">Home</a>
-          <a class="nav-link" href="/fruits/new">Add New Item</a>
-          <a class="nav-link" href="#">Pricing</a>
+  <div class="container-fluid navbar-edit">
+    <a class="navbar-brand" href="/fruits"><i class="fa-solid fa-seedling fa-2x nav-tree"></i></a>
+    <!-- <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+
+    <div class="nav-options-main " id="">
+      <div class="navbar-nav nav-options nav-B">
+        <a class="nav-link " aria-current="page" href="/fruits">Home</a>
+        <a class="nav-link" href="/fruits/new">Add New Item</a>
+        <!-- <a class="nav-link" href="#">Pricing</a> -->
+      </div>
+
+      <div class="navbar-nav nav-options na-B ms-auto">
+        <% if(!currUser) { %>
+        <a class="nav-link " aria-current="page" href="/signup"><i class="fa-solid fa-user-plus"></i> Sign up</a>
+        <a class="nav-link" href="/login"> <i class="fa-solid fa-right-to-bracket"></i> Log in</a>
+        <% } %>
+        <% if(currUser) { %>
+          <div>
+          <div style="color: rgb(59, 59, 156); text-align: center;"><i class="fa-solid fa-user fa-2x" ></i></i></div>
+          <div style="font-weight: bolder; color: rgb(9, 115, 141); font-size: larger;"><i><%= currUser.username %></i></div>
         </div>
-       
-        <div class="navbar-nav nav-options ms-auto">
-          <% if(!currUser) { %>
-          <a class="nav-link " aria-current="page" href="/signup"><i class="fa-solid fa-user-plus"></i> Sign up</a>
-          <a class="nav-link" href="/login"> <i class="fa-solid fa-right-to-bracket"></i> Log in</a>
-          <% } %>
-          <% if(currUser) { %>
-            <div>
-            <div style="color: rgb(59, 59, 156); text-align: center;"><i class="fa-solid fa-user fa-2x" ></i></i></div>
-            <div style="font-weight: bolder; color: rgb(9, 115, 141); font-size: larger;"><i><%= currUser.username %></i></div>
-          </div>
-          <a class="nav-link nav-logout" style="font-size: medium;" href="/logout">
-            <i class="fa-solid fa-right-from-bracket fa-sm" style="color: red;"></i>Log out</a>
-          <% } %>
-        </div>
+        <a class="nav-link nav-logout" style="font-size: medium;" href="/logout">
+          <i class="fa-solid fa-right-from-bracket fa-sm" style="color: red;"></i>Log out</a>
+        <% } %>
       </div>
     </div>
-  </nav>
-  <br/><br/><br/>
+
+
+
+    <div class="main_box">
+      <input type="checkbox" id="check" />
+      <div class="btn_one">
+        <label for="check" >
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+      <div class="sidebar_menu">
+        <div class="logo">
+          <a href="/fruits">Somnath's Fruit Mart</a>
+        </div>
+
+        <div class="btn_two">
+          <label for="check" style="color: grey">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <i class="fa-solid fa-image"></i>
+              <a href="/fruits">Home</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <a href="/fruits/new">Add New Item</a>
+            </li>
+            <div class="navbar-nav nav-options na-B ms-auto">
+              <li>
+              <% if(!currUser) { %>
+              <a class="nav-link " aria-current="page" href="/signup"><i class="fa-solid fa-user-plus"></i> Sign up</a>
+              <a class="nav-link" href="/login"> <i class="fa-solid fa-right-to-bracket"></i> Log in</a>
+              <% } %>
+            </li>
+            <li>
+              <% if(currUser) { %>
+                <div>
+                <div style="color: rgb(59, 59, 156); text-align: start; margin-left: 20px;"><i class="fa-solid fa-user fa-2x" ></i></i></div>
+                <div style="font-weight: bolder; color: rgb(9, 115, 141); font-size: larger; text-align: start;"><i><%= currUser.username %></i></div>
+              </div>
+              <a class="nav-link nav-logout" style="font-size: medium; text-align: start;" href="/logout">
+                <i class="fa-solid fa-right-from-bracket fa-sm" style="color: red;"></i>Log out</a>
+              <% } %>
+            </li>
+            </div>
+            <br/><br>
+           <li>
+        <div class="social_media">
+          <ul>
+            <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"><i class="fa-brands fa-facebook"></i></i></a>
+            <a href="https://x.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></i></a>
+            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+          </ul>
+        </div>
+      </li>
+      </div>
+    </div>
+</div>
+
+
+      
+  </div>
+</nav>
+<br/><br/><br/>
+<!-- collapse navbar-collapse
+navbarNavAltMarkup -->
