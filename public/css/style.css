@@ -174,6 +174,12 @@ opacity: 0;
 }
 
 /* INDEX PAGE */
+@media(min-width: 994px){
+    .index-main{
+        margin: auto;
+        text-align: center;
+    }
+}
 .index-main{
     margin-left: 4rem;
     display: flex;
