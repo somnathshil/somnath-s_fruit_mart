@@ -57,7 +57,7 @@ margin-right: 0;
 .nav-B{
     margin-left: 0;
 }
-@media(max-width: 760px){
+@media(max-width: 994px){
     .nav-options-main{
        display: none;
     }
@@ -166,7 +166,7 @@ opacity: 0;
 #check:checked ~ .sidebar_menu .btn_two i{
     opacity: 1;
 }
-@media(min-width: 760px){
+@media(min-width: 994px){
     .main_box{
         display: none;
     }
