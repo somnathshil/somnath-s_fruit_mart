@@ -81,7 +81,7 @@ margin-right: 0;
 }
 .sidebar_menu{
     width: 300px;
-    height: 100vh;
+    height: 60%;
     background-color: rgb(21, 211, 211);
     position: fixed;
     right: -300px;
@@ -174,12 +174,6 @@ opacity: 0;
 }
 
 /* INDEX PAGE */
-@media(min-width: 994px){
-    .index-main{
-        margin: auto;
-        text-align: center;
-    }
-}
 .index-main{
     margin-left: 4rem;
     display: flex;
