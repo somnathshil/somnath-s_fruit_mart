@@ -65,9 +65,6 @@ margin-right: 0;
 }
 
 /* NAVBAR COLLAPSE */
-.main_box{
-    width: 10%;
-}
 
 
 .btn_one{
@@ -81,7 +78,7 @@ margin-right: 0;
 }
 .sidebar_menu{
     width: 300px;
-    height: 60%;
+    height: 55%;
     background-color: rgb(21, 211, 211);
     position: fixed;
     right: -300px;
@@ -115,10 +112,10 @@ margin-right: 0;
 .main_box .sidebar_menu .menu{
     position: absolute;
     width: 100%;
-    top: 80px;
+    top: 60px;
 }
 .sidebar_menu .menu li{
-   margin-top: 15px ;
+   margin-top: 5px ;
    padding: 10px 20px;
 }
 .sidebar_menu .menu i, a{
@@ -166,6 +163,7 @@ opacity: 0;
 #check:checked ~ .sidebar_menu .btn_two i{
     opacity: 1;
 }
+
 @media(min-width: 994px){
     .main_box{
         display: none;
@@ -174,6 +172,10 @@ opacity: 0;
 }
 
 /* INDEX PAGE */
+@media(max-width: 362px ){
+    .index-main{ margin-left: 1rem !important;}
+    .sidebar_menu{height: 50%;}
+}
 .index-main{
     margin-left: 4rem;
     display: flex;

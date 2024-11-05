@@ -49,43 +49,47 @@
           </label>
         </div>
 
-        <div class="menu">
-          <ul>
+        <div class="menu" >
+          <ul style="list-style-type: none">
             <li>
               <i class="fa-solid fa-image"></i>
-              <a href="/fruits">Home</a>
+              <a href="/fruits" style="text-decoration: none;">Home</a>
             </li>
             <li>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <a href="/fruits/new">Add New Item</a>
+              <a href="/fruits/new" style="text-decoration: none;">Add New Item</a>
             </li>
-            <div class="navbar-nav nav-options na-B ms-auto">
-              <li>
+        
+              
               <% if(!currUser) { %>
+                <li>
               <a class="nav-link " aria-current="page" href="/signup"><i class="fa-solid fa-user-plus"></i> Sign up</a>
+              </li>
+              <li>
               <a class="nav-link" href="/login"> <i class="fa-solid fa-right-to-bracket"></i> Log in</a>
-              <% } %>
             </li>
-            <li>
+              <% } %>
+            
+           
               <% if(currUser) { %>
-                <div>
+      
+                <li>
                 <div style="color: rgb(59, 59, 156); text-align: start; margin-left: 20px;"><i class="fa-solid fa-user fa-2x" ></i></i></div>
                 <div style="font-weight: bolder; color: rgb(9, 115, 141); font-size: larger; text-align: start;"><i><%= currUser.username %></i></div>
-              </div>
-              <a class="nav-link nav-logout" style="font-size: medium; text-align: start;" href="/logout">
+              </li>
+              <li>
+              <a class="nav-link nav-logout" style="font-size: medium;color: red; text-align: start;" href="/logout">
                 <i class="fa-solid fa-right-from-bracket fa-sm" style="color: red;"></i>Log out</a>
-              <% } %>
-            </li>
-            </div>
-            <br/><br>
+              </li>
+            
+                <% } %>
+            <br/>
            <li>
         <div class="social_media">
-          <ul>
-            <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"><i class="fa-brands fa-facebook"></i></i></a>
-            <a href="https://x.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></i></a>
-            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-          </ul>
+          &nbsp; <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F"><i class="fa-brands fa-facebook"></i></i></a>
+           &nbsp; <a href="https://x.com/?lang=en"><i class="fa-brands fa-twitter"></i></a>
+           &nbsp; <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></i></a>
+            &nbsp;<a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
         </div>
       </li>
       </div>
